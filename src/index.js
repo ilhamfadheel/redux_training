@@ -1,6 +1,5 @@
-// import { markProductAsDiscount, productAdded } from './store/product/action'; // folder approach
-import { productMarkAsDiscount, productAdded } from "./store/product"; // file approach
-import { productCartAdded, productCartRemoved } from "./store/cart"; // file approach
+import { productMarkAsDiscount, productAdded } from "./store/product";
+import { productCartAdded, productCartRemoved } from "./store/cart";
 
 import store from "./store/store";
 import { userAdded } from "./store/user";
