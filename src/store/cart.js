@@ -1,10 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 let lastId = 0;
 const initialState = [];
 
 const slice = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState: initialState,
   reducers: {
     productCartAdded: (carts, action) => {
@@ -15,9 +15,7 @@ const slice = createSlice({
       });
     },
     productCartRemoved: (carts, action) => {
-      const index = carts.findIndex(
-        (cart) => cart.id === action.payload.id
-      );
+      const index = carts.findIndex((cart) => cart.id === action.payload.id);
       if (index > -1) {
         carts.splice(index, 1);
       }

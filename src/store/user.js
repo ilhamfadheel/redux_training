@@ -1,10 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 let lastId = 0;
 const initialState = [];
 
 const slice = createSlice({
-  name: 'users',
+  name: "users",
   initialState: initialState,
   reducers: {
     userAdded: (users, action) => {

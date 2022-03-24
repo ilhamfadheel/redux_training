@@ -1,8 +1,8 @@
-import axios from 'axios';
-import { apiProductsRequestSucceeded } from '../product';
+import axios from "axios";
+import { apiProductsRequestSucceeded } from "../product";
 
 const api = (store) => (next) => async (action) => {
-  if (action.type !== 'apiRequest') return next(action);
+  if (action.type !== "apiRequest") return next(action);
 
   next(action);
 

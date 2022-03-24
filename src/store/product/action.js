@@ -1,4 +1,4 @@
-import { MARK_PRODUCT_AS_DISCOUNT, PRODUCT_ADDED } from './action-types';
+import { MARK_PRODUCT_AS_DISCOUNT, PRODUCT_ADDED } from "./action-types";
 
 /**
  *
@@ -22,7 +22,6 @@ export function markProductAsDiscount(product = {}) {
     payload: {
       id: product.id ? product.id : null,
       hasDiscount: true,
-    }
-  }
+    },
+  };
 }
-

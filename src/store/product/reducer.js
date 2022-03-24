@@ -2,7 +2,7 @@ import {
   MARK_PRODUCT_AS_DISCOUNT,
   PRODUCT_ADDED,
   PRODUCT_REMOVED,
-} from './action-types';
+} from "./action-types";
 
 let lastId = 0;
 const initialState = [];

@@ -1,12 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 let lastId = 0;
 const initialState = {
-  list: []
+  list: [],
 };
 
 const slice = createSlice({
-  name: 'products',
+  name: "products",
   initialState: initialState,
   reducers: {
     productAdded: (products, action) => {
@@ -18,7 +18,6 @@ const slice = createSlice({
       });
     },
     productMarkAsDiscount: (products, action) => {
-      
       const index = products.list.findIndex(
         (product) => product.id === action.payload.id
       );
@@ -30,10 +29,15 @@ const slice = createSlice({
       products.list.push(...action.payload);
     },
     piProductRequestFailed: (products, action) => {
-      console.log('error', action.payload);
+      console.log("error", action.payload);
     },
   },
 });
 
-export const { productAdded, productMarkAsDiscount, apiProductsRequestSucceeded, piProductRequestFailed } = slice.actions;
+export const {
+  productAdded,
+  productMarkAsDiscount,
+  apiProductsRequestSucceeded,
+  piProductRequestFailed,
+} = slice.actions;
 export default slice.reducer;

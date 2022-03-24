@@ -1,3 +1,3 @@
-import { createAction } from '@reduxjs/toolkit';
+import { createAction } from "@reduxjs/toolkit";
 
-export const apiRequest = createAction('apiRequest');
+export const apiRequest = createAction("apiRequest");
