@@ -1,11 +1,15 @@
-import * as actions from "./actionTypes";
+import {
+  MARK_PRODUCT_AS_DISCOUNT,
+  PRODUCT_ADDED,
+  PRODUCT_REMOVED,
+} from './action-types';
 
 let lastId = 0;
 const initialState = [];
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case "productAdded":
+    case PRODUCT_ADDED:
       return [
         ...state,
         {
@@ -15,18 +19,20 @@ export default function reducer(state = initialState, action) {
           hasDiscount: action.payload.hasDiscount,
         },
       ];
-    case actions.PRODUCT_REMOVED:
+
+    case PRODUCT_REMOVED:
       return state.filter((product) => product.id !== action.payload.id);
 
-    case actions.PRODUCT_MARK_AS_DISCOUNT:
-      return state.map((product) =>
-        product.id !== action.payload.id
-          ? product
-          : {
-              ...product,
-              hasDiscount: action.payload.hasDiscount,
-            }
-      );
+    case MARK_PRODUCT_AS_DISCOUNT:
+      return state.map((product) => {
+        if (product.id === action.payload.id) {
+          return {
+            ...product,
+            hasDiscount: true,
+          };
+        }
+        return product;
+      });
 
     default:
       return state;
